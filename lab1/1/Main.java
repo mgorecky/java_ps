@@ -10,6 +10,7 @@ public class Main {
 		*/
 
 		Pliki p = new Pliki();
-		System.out.println(p.FindStartLocalization());
+		//System.out.println(p.FindStartLocalization());
+		p.GetAllFiles(p.FindStartLocalization());
 	}	
 }
