@@ -36,7 +36,7 @@ public class Pliki {
 		System.out.println(destLocation.toString());
 
 		for (File f : files){
-			Files.copy(fromPath.resolve(f.getName()), destLocation.resolve(f.getName()));
+			Files.copy(fromPath.resolve(f.getName()), destLocation.resolve(f.getName()), StandardCopyOption.REPLACE_EXISTING);
 			System.out.println("Przenosze plik do: " + destLocation.resolve(f.getName()));
 		}
 	}
