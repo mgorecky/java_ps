@@ -10,6 +10,6 @@ public class Main {
 		*/
 
 		Pliki p = new Pliki();
-		p.FindStartLocalization();
+		System.out.println(p.FindStartLocalization());
 	}	
 }

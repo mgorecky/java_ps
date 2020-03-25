@@ -10,8 +10,8 @@ public class Pliki {
 
 	public Path FindStartLocalization() {
 		File f = new File("temp");
-		System.out.println(f.getAbsolutePath());
-		return null;
+		//System.out.println(f.toPath().toAbsolutePath());
+		return f.toPath().toAbsolutePath();
 	}
 	
 }
