@@ -25,9 +25,19 @@ public class Pliki {
 		});
 		for (File f : tempFiles){
 			System.out.println(f.getName());
+			GetFileInfo(f);
 		}
 
 		return null;
+	}
+
+	public void GetFileInfo(File file) {
+		System.out.println("Nazwa: " + file.getName());
+		System.out.println("Root: " + file.toPath().getRoot());
+		System.out.println("Liczba podkatakogów: " + file.toPath().getNameCount());
+		System.out.println("Wielkość (B): " + file.length());
+		System.out.println("Czy można wykonać: " + file.canExecute());
+		System.out.println("Rozmiar dysku: " + file.getTotalSpace());
 	}
 	
 }
