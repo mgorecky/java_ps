@@ -21,6 +21,7 @@ public class PlikiZip {
 		}
 
 		ZipOutputStream zipOut = new ZipOutputStream(new FileOutputStream(destPath.resolve(zipName).toString()));
+		//zipOut.setLevel(9);
 		for (File f : files){
 			ZipEntry zipE = new ZipEntry(f.getName());
 			zipOut.putNextEntry(zipE);
