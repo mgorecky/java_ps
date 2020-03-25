@@ -22,5 +22,21 @@ public class SerializacjaDanych {
 			e.printStackTrace();
 		}
 
-	}	
+	}
+	
+	public void ReadSerializableFile() {
+		try {
+			ObjectInputStream objIn = new ObjectInputStream(new FileInputStream("Osoby.dat"));
+			Osoba osoba3 = (Osoba)objIn.readObject();
+			Osoba osoba4 = (Osoba)objIn.readObject();
+			objIn.close();
+
+			System.out.println(osoba3.toString());
+			System.out.println(osoba4.toString());
+		} catch(IOException e){
+			e.printStackTrace();
+		} catch (ClassNotFoundException e){
+			e.printStackTrace();
+		}
+	}
 }
