@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+
 /**
  * Main
  */
@@ -10,7 +14,13 @@ public class Main {
 		*/
 
 		Pliki p = new Pliki();
-		//System.out.println(p.FindStartLocalization());
-		p.GetAllFiles(p.FindStartLocalization());
+		Path startLocation = p.FindStartLocalization();
+
+		File[] temp = p.GetAllFiles(startLocation);
+		try{
+			p.MoveFile(startLocation.getParent(), "katalog", temp);
+		} catch (IOException e){
+			e.printStackTrace();
+		}
 	}	
 }

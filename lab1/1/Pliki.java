@@ -1,14 +1,14 @@
 import java.io.File;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 /**
  * Pliki
  */
 public class Pliki {
-	public void Pliki() {
-	}
-
 	public Path FindStartLocalization() {
 		File f = new File("temp");
 		//System.out.println(f.toPath().toAbsolutePath());
@@ -25,10 +25,20 @@ public class Pliki {
 		});
 		for (File f : tempFiles){
 			System.out.println(f.getName());
-			GetFileInfo(f);
+			//GetFileInfo(f);
 		}
 
-		return null;
+		return tempFiles;
+	}
+
+	public void MoveFile(Path fromPath, String toPath, File[] files) throws IOException{
+		Path destLocation = fromPath.resolve(toPath);
+		System.out.println(destLocation.toString());
+
+		for (File f : files){
+			Files.copy(fromPath.resolve(f.getName()), destLocation.resolve(f.getName()));
+			System.out.println("Przenosze plik do: " + destLocation.resolve(f.getName()));
+		}
 	}
 
 	public void GetFileInfo(File file) {
@@ -38,6 +48,5 @@ public class Pliki {
 		System.out.println("Wielkość (B): " + file.length());
 		System.out.println("Czy można wykonać: " + file.canExecute());
 		System.out.println("Rozmiar dysku: " + file.getTotalSpace());
-	}
-	
+	}	
 }
