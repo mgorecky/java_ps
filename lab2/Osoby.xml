@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root>
+    <Osoba nr="1">
+        <Imie>Jan</Imie>
+        <Nazwisko>Kowalski</Nazwisko>
+        <Adres/>
+        <Ulica lok="6" nr="12">Kwiatowa</Ulica>
+        <Miasto postal="30-000">Kraków</Miasto>
+    </Osoba>
+</Root>
